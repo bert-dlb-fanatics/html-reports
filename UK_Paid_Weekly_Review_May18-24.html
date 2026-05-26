@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UK Paid — Weekly Review (W of May 18-24, 2026)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    background: #fafaf9;
+    color: #1c1917;
+    margin: 0;
+    padding: 32px 24px 64px 24px;
+    line-height: 1.5;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  header { border-bottom: 1px solid #e7e5e4; padding-bottom: 16px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; }
+  h1 { font-size: 26px; margin: 0 0 4px 0; font-weight: 600; letter-spacing: -0.01em; }
+  .subtitle { color: #78716c; font-size: 14px; }
+  h2 { font-size: 18px; margin: 40px 0 12px 0; font-weight: 600; letter-spacing: -0.01em; }
+  h3 { font-size: 14px; margin: 20px 0 8px 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; color: #57534e; }
+  h4 { font-size: 13px; margin: 18px 0 6px 0; font-weight: 600; color: #57534e; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .toolbar { display: flex; gap: 8px; align-items: center; }
+  .btn {
+    background: white;
+    border: 1px solid #d6d3d1;
+    color: #1c1917;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .btn:hover { background: #f5f5f4; border-color: #a8a29e; }
+  .btn-primary { background: #1c1917; color: white; border-color: #1c1917; }
+  .btn-primary:hover { background: #292524; }
+  .edit-banner {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e3a8a;
+    padding: 8px 14px;
+    margin: 0 0 20px 0;
+    font-size: 12.5px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .caveats {
+    background: #fef9c3;
+    border-left: 3px solid #ca8a04;
+    padding: 10px 14px;
+    margin: 16px 0 24px 0;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+  .caveats strong { color: #713f12; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card {
+    background: white;
+    border: 1px solid #e7e5e4;
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #f5f5f4; padding-bottom: 10px; }
+  .card-title { font-weight: 600; font-size: 15px; }
+  .badge { padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+  .b-good { background: #d1fae5; color: #065f46; }
+  .b-warn { background: #fef3c7; color: #92400e; }
+  .b-mid  { background: #fed7aa; color: #9a3412; }
+  .b-bad  { background: #fee2e2; color: #991b1b; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 13px; }
+  th { text-align: left; padding: 6px 8px; font-weight: 600; color: #57534e; border-bottom: 1px solid #e7e5e4; font-size: 12px; text-transform: uppercase; letter-spacing: 0.02em; }
+  td { padding: 6px 8px; border-bottom: 1px solid #f5f5f4; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .delta-good { color: #047857; font-weight: 500; }
+  .delta-bad  { color: #b91c1c; font-weight: 500; }
+  .delta-neu  { color: #78716c; }
+  .commentary { font-size: 13px; color: #44403c; margin-top: 10px; }
+  .commentary p { margin: 4px 0; }
+  .next { font-size: 13px; margin-top: 10px; padding: 8px 12px; background: #f5f5f4; border-radius: 6px; border-left: 3px solid #57534e; }
+  .next strong { color: #1c1917; }
+  .creative-table th, .creative-table td { padding: 5px 8px; font-size: 12.5px; }
+  .creative-table tr:hover { background: #fafaf9; }
+  .tag { display: inline-block; padding: 1px 7px; border-radius: 8px; font-size: 11px; font-weight: 500; margin-right: 4px; }
+  .tag-soccer { background: #e0f2fe; color: #075985; }
+  .tag-ap     { background: #f3e8ff; color: #6b21a8; }
+  .tag-chrome { background: #fce7f3; color: #9d174d; }
+  .tag-reg    { background: #ecfccb; color: #3f6212; }
+  .tag-video  { background: #fee2e2; color: #991b1b; }
+  .section-top    { border-left: 3px solid #16a34a; padding-left: 14px; }
+  .section-mid    { border-left: 3px solid #ca8a04; padding-left: 14px; }
+  .section-bottom { border-left: 3px solid #dc2626; padding-left: 14px; }
+
+  .creative-note {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #075985;
+    padding: 8px 12px;
+    font-size: 12.5px;
+    border-radius: 6px;
+    margin: 6px 0 14px 0;
+  }
+
+  /* Overall card */
+  .overall-card { background: white; border: 1px solid #e7e5e4; border-radius: 8px; padding: 18px 22px; }
+  .overall-card .card-head { margin-bottom: 14px; }
+
+  /* Next steps with checkboxes */
+  .next-steps-list { background: white; border: 1px solid #e7e5e4; border-radius: 8px; padding: 16px 22px; }
+  .ns-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f4;
+    font-size: 13.5px;
+  }
+  .ns-item:last-child { border-bottom: none; }
+  .ns-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #a8a29e;
+    border-radius: 4px;
+    margin-top: 1px;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.15s;
+  }
+  .ns-checkbox:hover { border-color: #57534e; }
+  .ns-checkbox:checked { background: #16a34a; border-color: #16a34a; }
+  .ns-checkbox:checked::after {
+    content: "✓";
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+  }
+  .ns-content { flex: 1; }
+  .ns-item.done .ns-content {
+    text-decoration: line-through;
+    color: #a8a29e;
+  }
+  .ns-item.done .ns-content strong { color: #a8a29e; }
+
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e7e5e4; font-size: 12px; color: #78716c; }
+  footer a { color: #57534e; text-decoration: none; border-bottom: 1px dashed #a8a29e; }
+  code { background: #f5f5f4; padding: 1px 5px; border-radius: 3px; font-size: 11.5px; }
+
+  /* ---- Editable zones ---- */
+  [data-editable] {
+    position: relative;
+    border-radius: 4px;
+    transition: background 0.12s, outline 0.12s;
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+    cursor: text;
+  }
+  [data-editable]:hover {
+    outline: 1px dashed #93c5fd;
+    background: #f0f9ff;
+  }
+  [data-editable]:focus {
+    outline: 2px solid #3b82f6;
+    background: #f0f9ff;
+    cursor: text;
+  }
+  [data-editable].edited::after {
+    content: "·";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  @media (max-width: 800px) { .grid-2 { grid-template-columns: 1fr; } header { flex-direction: column; align-items: stretch; } }
+  @media print {
+    .toolbar, .edit-banner { display: none !important; }
+    [data-editable] { outline: none !important; background: transparent !important; }
+    [data-editable].edited::after { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div>
+    <h1>UK Paid — Weekly Review</h1>
+    <div class="subtitle">Week of <strong>May 18–24, 2026</strong> · compared to May 11–17 · pulled May 26</div>
+  </div>
+  <div class="toolbar">
+    <button class="btn" id="resetBtn" title="Revert all edits">↺ Reset edits</button>
+    <button class="btn btn-primary" id="downloadBtn" title="Download current version">⬇ Download HTML</button>
+  </div>
+</header>
+
+<div class="edit-banner">✏️ Click any text zone to edit. Tick boxes in the Next steps to mark them done. Edits and ticks are saved locally; use <strong>Download HTML</strong> to export your version.</div>
+
+<div class="caveats" data-editable>
+  <strong>Data caveats:</strong> d7 and d30 ROAS on W-1 are <em>early reads</em> — most of the W-1 cohort is only 2-7 days old at pull time, so the d30 ROAS column for W-1 has essentially zero maturity. Re-pull June 1 for a mature d7 read and June 24 for d30. Creative analysis is iOS-only (Android purchase events broken). Android tracking gap (2.5× Ads Manager overcount) still <strong>not resolved</strong>: keep piloting Android on Sigma, not Ads Manager.
+</div>
+
+<h2>1 · Performance</h2>
+
+<h4>Overall — all campaigns blended</h4>
+
+<div class="overall-card">
+  <div class="card-head">
+    <div class="card-title">UK Paid · Total</div>
+    <span class="badge b-good" data-editable>🟢 Best CPFP and Reg→FP of the last 6 weeks</span>
+  </div>
+  <table>
+    <thead><tr><th>KPI</th><th class="num">W-1</th><th class="num">W-2</th><th class="num">Δ</th></tr></thead>
+    <tbody>
+      <tr><td>Spend</td><td class="num">$8,770</td><td class="num">$9,697</td><td class="num delta-neu">-10%</td></tr>
+      <tr><td>Installs</td><td class="num">182</td><td class="num">245</td><td class="num delta-bad">-26%</td></tr>
+      <tr><td>1st Purchasers</td><td class="num">39</td><td class="num">24</td><td class="num delta-good">+63%</td></tr>
+      <tr><td>Blended CPFP</td><td class="num">$225</td><td class="num">$404</td><td class="num delta-good">-44%</td></tr>
+      <tr><td>Blended Reg→FP</td><td class="num">18.4%</td><td class="num">8.9%</td><td class="num delta-good">+9.5pp</td></tr>
+      <tr><td>d7 ROAS <span style="color:#a8a29e;">(early)</span></td><td class="num">1.04%</td><td class="num">3.86%</td><td class="num delta-bad">-73%</td></tr>
+      <tr><td>d30 ROAS <span style="color:#a8a29e;">(very early)</span></td><td class="num">1.05%</td><td class="num">4.53%</td><td class="num delta-bad">-77%</td></tr>
+    </tbody>
+  </table>
+  <div class="commentary" data-editable>
+    <p>Best acquisition quality week of the last six. Spend down 10%, FP up 63%, CPFP cut nearly in half ($404 → $225), and <strong>Reg→FP jumped from 8.9% to 18.4%</strong> — the highest level on record in this window. Same registrations volume, almost twice as many of them converted to a buyer.</p>
+    <p>ROAS columns look bad but they're an artifact of cohort age — the W-1 cohort is 2-7 days old at pull, so d30 ROAS especially is mechanically near-zero. Don't read these as a signal; the W-2 reads will mature over the next two weeks.</p>
+    <p>The improvement is concentrated on <strong>Meta iOS</strong> (27 FP, vs 17 the week before). The Meta Android cut was executed cleanly. Google UAC is the only channel that drifted in the wrong direction — both iOS (0 installs but +$1,161 spend) and Android (above the $800/wk cap).</p>
+  </div>
+  <div class="next" data-editable><strong>Headline action:</strong> hold + scale Meta iOS. Hard pause Google UAC iOS (no excuses — 0 installs in 6 weeks, spend tripled). Cap Google UAC Android back to $800/wk. Hold Meta Android cut for one more week before scaling back up.</div>
+</div>
+
+<h4>Campaign breakdown</h4>
+
+<div class="grid-2">
+
+  <!-- Meta iOS -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-title">Meta · iOS</div>
+      <span class="badge b-good" data-editable>🟢 Best week on every quality KPI</span>
+    </div>
+    <table>
+      <thead><tr><th>KPI</th><th class="num">W-1</th><th class="num">W-2</th><th class="num">Δ</th></tr></thead>
+      <tbody>
+        <tr><td>Spend</td><td class="num">$4,226</td><td class="num">$3,775</td><td class="num delta-neu">+12%</td></tr>
+        <tr><td>Installs</td><td class="num">89</td><td class="num">102</td><td class="num delta-neu">-13%</td></tr>
+        <tr><td>1st Purchasers</td><td class="num">27</td><td class="num">17</td><td class="num delta-good">+59%</td></tr>
+        <tr><td>CPFP</td><td class="num">$157</td><td class="num">$222</td><td class="num delta-good">-29%</td></tr>
+        <tr><td>Reg→FP</td><td class="num">22.9%</td><td class="num">14.5%</td><td class="num delta-good">+8.4pp</td></tr>
+        <tr><td>d7 ROAS <span style="color:#a8a29e;">(early)</span></td><td class="num">1.86%</td><td class="num">9.74%</td><td class="num delta-bad">-81%</td></tr>
+      </tbody>
+    </table>
+    <div class="commentary" data-editable>
+      <p>Spend up 12% to $604/day, FP up 59% (27 vs 17), CPFP down to <strong>$157 — well below the $300 benchmark</strong>. Reg→FP at 22.9% is the highest on record in our 6-week window. This is a cohort doing the right things at the top AND bottom of the funnel.</p>
+      <p>The d7 ROAS drop is purely cohort age — the W-2 read (9.74%) had ~5 mature days at pull, W-1 has ~2. Re-pull June 1.</p>
+    </div>
+    <div class="next" data-editable><strong>Next:</strong> push budget up another 15-20% to ~$700/day. Don't go beyond +20% in one move (Meta resets learning phase). Brief Jump for a creative refresh on <code>soccer-iterations</code> regardless — BoxHero/Rooney are 6 weeks old, fatigue is the next risk.</div>
+  </div>
+
+  <!-- Meta Android -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-title">Meta · Android</div>
+      <span class="badge b-warn" data-editable>🟡 Cut executed, watching</span>
+    </div>
+    <table>
+      <thead><tr><th>KPI</th><th class="num">W-1</th><th class="num">W-2</th><th class="num">Δ</th></tr></thead>
+      <tbody>
+        <tr><td>Spend</td><td class="num">$1,368</td><td class="num">$3,789</td><td class="num delta-good">-64%</td></tr>
+        <tr><td>Installs</td><td class="num">36</td><td class="num">77</td><td class="num delta-neu">-53%</td></tr>
+        <tr><td>1st Purchasers</td><td class="num">3</td><td class="num">2</td><td class="num delta-neu">+1</td></tr>
+        <tr><td>CPFP</td><td class="num">$456</td><td class="num">$1,895</td><td class="num delta-good">-76%</td></tr>
+        <tr><td>Reg→FP</td><td class="num">8.1%</td><td class="num">2.5%</td><td class="num delta-good">+5.6pp</td></tr>
+        <tr><td>d7 ROAS <span style="color:#a8a29e;">(early)</span></td><td class="num">0.19%</td><td class="num">0.06%</td><td class="num delta-good">+217%</td></tr>
+      </tbody>
+    </table>
+    <div class="commentary" data-editable>
+      <p>The cut landed: spend down from $541/d to $195/d (-64%), close to the $150/d target from last week. CPFP dropped from $1,895 (last week's outlier with only 2 FP) back to $456 — still above the $600 benchmark but trending right. Reg→FP recovered to 8.1%, just above the 7% alarm.</p>
+      <p>Sample is still small (3 FP on the week), so don't over-read either direction. The tracking gap (2.5× Ads Manager overcount) remains the structural blocker on this channel.</p>
+    </div>
+    <div class="next" data-editable><strong>Next:</strong> hold at $200/day for one more week. If CPFP stays sub-$500 with stable Reg→FP, consider a small +20% test (~$240/d) starting W+2. Do not scale before the tracking gap is fixed.</div>
+  </div>
+
+  <!-- Google UAC iOS -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-title">Google UAC · iOS</div>
+      <span class="badge b-bad" data-editable>🔴 Spend tripled, still 0 installs</span>
+    </div>
+    <table>
+      <thead><tr><th>KPI</th><th class="num">W-1</th><th class="num">W-2</th><th class="num">Δ</th></tr></thead>
+      <tbody>
+        <tr><td>Spend</td><td class="num">$1,161</td><td class="num">$412</td><td class="num delta-bad">+182%</td></tr>
+        <tr><td>Installs</td><td class="num">0</td><td class="num">0</td><td class="num delta-neu">—</td></tr>
+        <tr><td>1st Purchasers</td><td class="num">0</td><td class="num">0</td><td class="num delta-neu">—</td></tr>
+        <tr><td>CPFP</td><td class="num">—</td><td class="num">—</td><td class="num delta-neu">—</td></tr>
+        <tr><td>Reg→FP</td><td class="num">—</td><td class="num">—</td><td class="num delta-neu">—</td></tr>
+        <tr><td>d7 ROAS</td><td class="num">0%</td><td class="num">0%</td><td class="num delta-neu">—</td></tr>
+      </tbody>
+    </table>
+    <div class="commentary" data-editable>
+      <p>Last week's call was "hard pause this week" after 6 weeks at 0 installs. Instead the campaign spent <strong>$1,161 this week (3× the prior week, 12× the W-3 baseline)</strong>. Something is auto-ramping the budget. 7 weeks running, $2k+ wasted, still zero installs.</p>
+    </div>
+    <div class="next" data-editable><strong>Next:</strong> hard pause TODAY. Send a Slack to whoever has access to the Google Ads account to confirm. Investigate why the daily budget keeps creeping up unsupervised.</div>
+  </div>
+
+  <!-- Google UAC Android -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-title">Google UAC · Android</div>
+      <span class="badge b-mid" data-editable>🟠 Over cap, but quality improving</span>
+    </div>
+    <table>
+      <thead><tr><th>KPI</th><th class="num">W-1</th><th class="num">W-2</th><th class="num">Δ</th></tr></thead>
+      <tbody>
+        <tr><td>Spend</td><td class="num">$2,015</td><td class="num">$1,720</td><td class="num delta-bad">+17%</td></tr>
+        <tr><td>Installs</td><td class="num">57</td><td class="num">66</td><td class="num delta-neu">-14%</td></tr>
+        <tr><td>1st Purchasers</td><td class="num">9</td><td class="num">5</td><td class="num delta-good">+80%</td></tr>
+        <tr><td>CPFP</td><td class="num">$224</td><td class="num">$344</td><td class="num delta-good">-35%</td></tr>
+        <tr><td>Reg→FP</td><td class="num">15.8%</td><td class="num">7.0%</td><td class="num delta-good">+8.8pp</td></tr>
+        <tr><td>d7 ROAS <span style="color:#a8a29e;">(early)</span></td><td class="num">0.50%</td><td class="num">0.26%</td><td class="num delta-good">+92%</td></tr>
+      </tbody>
+    </table>
+    <div class="commentary" data-editable>
+      <p>The good: CPFP at $224 is well below the $600 Android benchmark, Reg→FP at 15.8% is the best in 6 weeks. The bad: spend is now $288/day — <strong>$2,015/week vs the $800/week cap set 2 weeks ago</strong>. Installs are saturating (57-73/wk for the last 4 weeks despite spend tripling).</p>
+    </div>
+    <div class="next" data-editable><strong>Next:</strong> bring the daily budget back to $115/day to land at the $800/wk cap. If quality holds at this lower spend for 2 weeks, then ramp deliberately by +20% increments.</div>
+  </div>
+
+</div>
+
+<h2>2 · Creative performance (iOS read, 30 days: Apr 26 → May 25)</h2>
+
+<div class="creative-note" data-editable>
+  ℹ️ <strong>All creatives below already run on both iOS and Android.</strong> iOS data is shown alone because Android purchase tracking is broken — but every <strong>scale</strong> or <strong>kill</strong> decision below applies to both OS at the same time. Revenue figures = 7-day cumulative from buyers attributed to each ad.
+</div>
+
+<p style="font-size: 13px; color: #57534e; margin: 4px 0 14px 0;" data-editable>26 ads · 2.12M impressions · 767 installs · 109 first purchasers (7d cumul.) · $29.9k revenue. Signal threshold = ≥10k impressions.</p>
+
+<div class="section-top">
+<h3>🟢 Top — Scale (both OS)</h3>
+<table class="creative-table">
+  <thead><tr><th>Adset</th><th>Ad</th><th class="num">Impr</th><th class="num">CTR</th><th class="num">Inst</th><th class="num">IPM</th><th class="num">Buyers</th><th class="num">Rev 7d</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><span class="tag tag-reg">register</span></td><td><strong>23710-C</strong></td><td class="num">14k</td><td class="num">0.52%</td><td class="num">11</td><td class="num"><strong>0.77</strong></td><td class="num">2</td><td class="num"><strong>$7,626</strong></td><td data-editable>Best IPM in the account + highest revenue per buyer (~$3.8k each). Same winner as last week — redeploy into <code>app-purchase</code> with more spend.</td></tr>
+    <tr><td><span class="tag tag-soccer">soccer-iter</span></td><td><strong>BoxHero</strong></td><td class="num"><strong>444k</strong></td><td class="num">0.62%</td><td class="num"><strong>116</strong></td><td class="num">0.26</td><td class="num"><strong>26</strong></td><td class="num">$1,651</td><td data-editable>Volume workhorse — most installs and most buyers in the account. Launched Apr 14 — fatigue watch but still delivering. Refresh is queued, not urgent.</td></tr>
+    <tr><td><span class="tag tag-ap">app-purchase</span></td><td><strong>sidecards-ngumoha</strong></td><td class="num">196k</td><td class="num">1.77%</td><td class="num">75</td><td class="num">0.38</td><td class="num"><strong>16</strong></td><td class="num">$888</td><td data-editable>2nd highest buyer count. Best volume+perf balance in <code>app-purchase</code>. Confirmed winner — push more.</td></tr>
+    <tr><td><span class="tag tag-chrome">Chromelaunch</span></td><td><strong>HobbyBox</strong></td><td class="num">116k</td><td class="num">0.46%</td><td class="num">35</td><td class="num">0.30</td><td class="num">10</td><td class="num">$1,128</td><td data-editable>Best of the Chrome batch by a long shot. Upgraded from "least bad" last week to a real winner.</td></tr>
+    <tr><td><span class="tag tag-ap">app-purchase</span></td><td>showannouncement</td><td class="num">51k</td><td class="num">0.87%</td><td class="num">19</td><td class="num">0.38</td><td class="num">8</td><td class="num">$2,411</td><td data-editable>8 buyers on a small impression base = strong efficiency. New format worth scaling.</td></tr>
+    <tr><td><span class="tag tag-soccer">soccer-iter</span></td><td>26743-B</td><td class="num">52k</td><td class="num">0.45%</td><td class="num">29</td><td class="num">0.56</td><td class="num">3</td><td class="num">$3,660</td><td data-editable>Small buyer count but heavy spenders ($1.2k avg). High IPM. Push spend.</td></tr>
+    <tr><td><span class="tag tag-ap">app-purchase</span></td><td>sidecards-rookies</td><td class="num">20k</td><td class="num">1.64%</td><td class="num">7</td><td class="num">0.35</td><td class="num">6</td><td class="num">$826</td><td data-editable><strong>86% install→buyer rate</strong> — top funnel conversion of any ad in the account.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="section-mid">
+<h3>🟡 Mid — Keep running, monitor</h3>
+<table class="creative-table">
+  <thead><tr><th>Adset</th><th>Ad</th><th class="num">Impr</th><th class="num">CTR</th><th class="num">Inst</th><th class="num">IPM</th><th class="num">Buyers</th><th class="num">Rev 7d</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><span class="tag tag-ap">app-purchase</span></td><td><strong>sidecards-dualauto</strong></td><td class="num"><strong>617k</strong></td><td class="num"><strong>4.59%</strong></td><td class="num">60</td><td class="num">0.10</td><td class="num"><strong>13</strong></td><td class="num">$3,003</td><td data-editable><strong>Re-evaluated.</strong> Last week I called this a kill — but with 30 days of data it's pulled 13 buyers and $3k. Story is: huge CTR (4.6%!), broken IPM (3 clicks per install = drop-off after click). Investigate the store-listing / LP rather than killing.</td></tr>
+    <tr><td><span class="tag tag-ap">app-purchase</span></td><td>sidecards-mbeumo</td><td class="num">100k</td><td class="num">2.52%</td><td class="num">10</td><td class="num">0.10</td><td class="num">3</td><td class="num"><strong>$5,863</strong></td><td data-editable><strong>Re-evaluated.</strong> Was on the kill list last week — now top revenue per buyer (~$1.95k each). Likely 1-2 whales skewing rev. Keep running but don't scale on revenue alone.</td></tr>
+    <tr><td><span class="tag tag-soccer">soccer-iter</span></td><td>26743-A</td><td class="num">76k</td><td class="num">0.48%</td><td class="num">39</td><td class="num">0.51</td><td class="num">5</td><td class="num">$586</td><td data-editable>Solid mid — IPM holding, buyer rate ok.</td></tr>
+    <tr><td><span class="tag tag-soccer">soccer-iter</span></td><td>Rooney</td><td class="num">102k</td><td class="num">0.71%</td><td class="num">20</td><td class="num">0.20</td><td class="num">3</td><td class="num">$140</td><td data-editable><strong>Fatigue confirmed.</strong> 3 buyers and only $140 rev (was $1.3k+ last week). Replace in the refresh wave.</td></tr>
+    <tr><td><span class="tag tag-ap">app-purchase</span></td><td>sidecards-dowman</td><td class="num">12k</td><td class="num">2.26%</td><td class="num">7</td><td class="num">0.59</td><td class="num">1</td><td class="num">$643</td><td data-editable>Healthy IPM, 1 buyer. Small base — let it accumulate.</td></tr>
+    <tr><td><span class="tag tag-chrome">Chromelaunch</span></td><td>PsgBayern</td><td class="num">32k</td><td class="num">0.45%</td><td class="num">9</td><td class="num">0.28</td><td class="num">3</td><td class="num">$158</td><td data-editable>Was on kill list last week — improved with 3 buyers. Borderline, monitor.</td></tr>
+    <tr><td><span class="tag tag-chrome">Chromelaunch</span></td><td>Messi</td><td class="num">37k</td><td class="num">0.44%</td><td class="num">9</td><td class="num">0.24</td><td class="num">1</td><td class="num">$118</td><td data-editable>Weakest of the Chrome winners. Hold until the Chrome refresh decision.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="section-bottom">
+<h3>🔴 Bottom — Kill (both OS)</h3>
+<table class="creative-table">
+  <thead><tr><th>Adset</th><th>Ad</th><th class="num">Impr</th><th class="num">CTR</th><th class="num">Inst</th><th class="num">IPM</th><th class="num">Buyers</th><th class="num">Rev 7d</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td><span class="tag tag-soccer">soccer-iter</span></td><td><strong>26741-C</strong></td><td class="num">109k</td><td class="num">0.35%</td><td class="num">19</td><td class="num">0.17</td><td class="num">2</td><td class="num">$609</td><td data-editable>109k impressions for only 2 buyers — same kill call as last week, confirmed.</td></tr>
+    <tr><td><span class="tag tag-soccer">soccer-iter</span></td><td>Fernandes</td><td class="num">55k</td><td class="num">0.64%</td><td class="num">12</td><td class="num">0.22</td><td class="num">1</td><td class="num">$86</td><td data-editable>Kill — confirmed from last week.</td></tr>
+    <tr><td><span class="tag tag-soccer">soccer-iter</span></td><td>26743-D</td><td class="num">12k</td><td class="num">0.38%</td><td class="num">3</td><td class="num">0.26</td><td class="num">0</td><td class="num">$0</td><td data-editable>3 installs · 0 buyers · 12k impressions wasted. Kill.</td></tr>
+    <tr><td><span class="tag tag-ap">app-purchase</span></td><td>sidecards-vandijk</td><td class="num">11k</td><td class="num">1.56%</td><td class="num">2</td><td class="num">0.19</td><td class="num">0</td><td class="num">$0</td><td data-editable>11k impressions, 0 buyers. Kill.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 style="margin-top: 24px;">⏳ Not enough volume yet — keep testing to 10k impressions</h3>
+<p style="font-size: 13px; color: #57534e;" data-editable><code>sidecards-cantona</code> (6.7k impr, 0 buyers), <code>sidecards-simons</code> (10.3k, 2 buyers — borderline scale candidate), <code>26741-B</code> (6.4k, 0 buyers), <code>26741-A</code> (4.2k, 0 buyers), <code>Dowman</code> Chrome ad (12k, 1 buyer, $65).</p>
+
+<h2>3 · Next steps this week</h2>
+
+<div class="next-steps-list" id="nextSteps">
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t1">
+    <div class="ns-content" data-editable><strong>Scale Meta iOS</strong> → +15-20% budget to ~$700/day (next move only). Don't exceed +20% in one step (learning phase reset risk).</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t2">
+    <div class="ns-content" data-editable><strong>Hold Meta Android at $200/day</strong> → one more week of monitoring. Decide on a +20% test (~$240/d) on May 31 if CPFP stays sub-$500 and Reg→FP stays above 7%.</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t3">
+    <div class="ns-content" data-editable><strong>HARD PAUSE Google UAC iOS today</strong> → 7 weeks · 0 installs · $1,161 burned this week alone. Investigate why daily budget is auto-ramping unsupervised.</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t4">
+    <div class="ns-content" data-editable><strong>Bring Google UAC Android back to $115/day</strong> ($800/wk cap). Channel is saturating: installs flat at 57-73/wk for 4 weeks despite spend tripling. Hold at cap for 2 weeks before any ramp.</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t5">
+    <div class="ns-content" data-editable><strong>Kill these creatives (both OS)</strong>: <code>26741-C</code>, <code>Fernandes</code>, <code>26743-D</code>, <code>sidecards-vandijk</code>. All have ≥10k impressions with ≤2 buyers and IPM &lt; 0.25.</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t6">
+    <div class="ns-content" data-editable><strong>Scale these creatives (both OS)</strong>: <code>BoxHero</code>, <code>sidecards-ngumoha</code>, <code>HobbyBox</code>, <code>showannouncement</code>, <code>26743-B</code>, <code>sidecards-rookies</code>, <code>23710-C</code> (redeploy into <code>app-purchase</code>).</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t7">
+    <div class="ns-content" data-editable><strong>Brief Jump on a <code>soccer-iterations</code> creative refresh</strong>: 3-4 new palatial-image iterations to start phasing out BoxHero/Rooney. Rooney is in fatigue ($140 rev this 30d vs $1.3k+ in the prior pull). Same formula (UK Premier League player + palatial card + clean composition). Target launch W+1.</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t8">
+    <div class="ns-content" data-editable><strong>Investigate <code>sidecards-dualauto</code> with Steph</strong>: 4.6% CTR but only 0.10 IPM — 3 clicks per install. Either App Store listing isn't matching the creative promise, or there's a tracking drop between click and install. Same pattern across some sidecards (<code>mbeumo</code>, <code>simons</code>, <code>cantona</code>).</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t9">
+    <div class="ns-content" data-editable><strong>Decide on <code>Chromelaunch</code></strong>: <code>HobbyBox</code> earned its way out of "Mid", but the rest of the Chrome ads are mediocre. UCC Chrome event was 7 weeks ago — either full creative refresh or fold the adset into <code>soccer-iterations</code>.</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t10">
+    <div class="ns-content" data-editable><strong>Re-pull W-1 ROAS on June 1 (d7) and June 24 (d30)</strong> for a mature read of the May 18-24 cohort. d30 ROAS is the only way to confirm the quality lift is real and not a sample artifact.</div>
+  </div>
+  <div class="ns-item">
+    <input type="checkbox" class="ns-checkbox" data-task="t11">
+    <div class="ns-content" data-editable><strong>Follow up with data/tech on the Android tracking gap</strong> (2.5× Ads Manager vs Sigma) and with Gordon on the ad-level ingestion. Both items have been open since May 15-19; ping for status before next Monday's review.</div>
+  </div>
+</div>
+
+<footer>
+  Sources: <a href="https://app.sigmacomputing.com/fanatics-collectibles/workbook/Cross-Business-Growth-Acquisition-L2-cznHdhV4A68hpYYb9bzSw?:nodeId=m9Kc0oAVU5">Sigma — Live Paid Media Spend Efficiency</a> (6 weeks W-6→W-1, Apr 13 → May 24) · AppsFlyer iOS Ad-level performance (Apr 26 → May 25). Methodology: <code>fanatics-live-uk-paid-acquisition</code> skill.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  const STORAGE_KEY = 'uk_paid_review_2026-05-18';
+
+  const editables = document.querySelectorAll('[data-editable]');
+  editables.forEach((el, idx) => {
+    el.setAttribute('contenteditable', 'true');
+    el.setAttribute('spellcheck', 'true');
+    el.dataset.editKey = 'edit_' + idx;
+    el.addEventListener('input', () => { el.classList.add('edited'); save(); });
+    el.addEventListener('blur', save);
+  });
+
+  const checkboxes = document.querySelectorAll('.ns-checkbox');
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('.ns-item').classList.toggle('done', cb.checked);
+      save();
+    });
+  });
+
+  function save() {
+    const data = { edits: {}, tasks: {} };
+    editables.forEach(el => { data.edits[el.dataset.editKey] = el.innerHTML; });
+    checkboxes.forEach(cb => { data.tasks[cb.dataset.task] = cb.checked; });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+  }
+
+  function restore() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      if (data.edits) {
+        editables.forEach(el => {
+          if (data.edits[el.dataset.editKey] !== undefined && el.innerHTML !== data.edits[el.dataset.editKey]) {
+            el.innerHTML = data.edits[el.dataset.editKey];
+            el.classList.add('edited');
+          }
+        });
+      }
+      if (data.tasks) {
+        checkboxes.forEach(cb => {
+          if (data.tasks[cb.dataset.task]) {
+            cb.checked = true;
+            cb.closest('.ns-item').classList.add('done');
+          }
+        });
+      }
+    } catch(e) {}
+  }
+  restore();
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    if (!confirm('Reset all edits and unchecked tasks? This will reload the original version.')) return;
+    try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+    location.reload();
+  });
+
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    const clone = document.documentElement.cloneNode(true);
+    clone.querySelectorAll('.ns-checkbox').forEach(cb => {
+      const orig = document.querySelector('.ns-checkbox[data-task="' + cb.dataset.task + '"]');
+      if (orig && orig.checked) cb.setAttribute('checked', 'checked');
+    });
+    clone.querySelectorAll('[contenteditable]').forEach(n => n.removeAttribute('contenteditable'));
+    clone.querySelectorAll('.edited').forEach(n => n.classList.remove('edited'));
+    const html = '<!DOCTYPE html>\n' + clone.outerHTML;
+    const blob = new Blob([html], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'UK_Paid_Weekly_Review_May18-24_edited.html';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+})();
+</script>
+
+</body>
+</html>
